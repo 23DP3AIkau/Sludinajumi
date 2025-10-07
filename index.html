@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="src/css/main.css">
 </head> 
 <body>
-    <header>
+    <header id="main-header">
         <h1>Alana Sludinājumi</h1>
-        <nav>
+        <nav id="nav-menu">
             <a href="#home">Sākums</a>
             <a href="#ads">Sludinājumi</a>
             <a href="#contact">Kontakti</a>
         </nav>
         <div class="header-buttons">
+            <button id="theme-toggle">Light mode</button>
             <button>Meklēt</button>
             <button>Pievienot sludinājumu</button>
             <button>Pieslēgties/Reģistrēties</button>
         </div>
+        <button class="burger-menu" id="burger-menu">☰</button>
     </header>
 
     <main>
@@ -69,15 +71,15 @@
 
     <aside>
         <div class="dropdown">
-            <h3>Kategorijas</h3>
+            <button class="dropdown-btn">☰ Kategorijas</button>
             <div class="dropdown-content">
-            <ul>
-                <li><a href="#">Auto</a></li>
-                <li><a href="#">Nekustamais īpašums</a></li>
-                <li><a href="#">Elektronika</a></li>
-                <li><a href="#">Sports & Hobiji</a></li>
-                <li><a href="#">Citi</a></li>
-            </ul>
+                <ul>
+                    <li><a href="#">Auto</a></li>
+                    <li><a href="#">Nekustamais īpašums</a></li>
+                    <li><a href="#">Elektronika</a></li>
+                    <li><a href="#">Sports & Hobiji</a></li>
+                    <li><a href="#">Citi</a></li>
+                </ul>
             </div>
         </div>
     </aside>
@@ -85,5 +87,7 @@
     <footer>
         <p>&copy; 2025 Alans Ikaunieks</p>
     </footer>
+
+    <script src="src/js/main.js"></script>
 </body>
 </html>
