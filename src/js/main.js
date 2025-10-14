@@ -14,19 +14,35 @@ window.addEventListener("scroll", () => {
 
 // --- LIGHT / DARK MODE TOGGLE ---
 const themeToggle = document.getElementById("theme-toggle");
-themeToggle.addEventListener("click", () => {
+const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+
+function toggleTheme() {
     document.body.classList.toggle("light-mode");
-    if (document.body.classList.contains("light-mode")) {
-        themeToggle.textContent = "Dark mode";
-    } else {
-        themeToggle.textContent = "Light mode";
-    }
-});
+    const isLight = document.body.classList.contains("light-mode");
 
-// --- BURGER MENU TOGGLE ---
-const burgerMenu = document.getElementById("burger-menu");
-const navMenu = document.getElementById("nav-menu");
+    // Update both buttons (desktop + mobile)
+    if (themeToggle) themeToggle.textContent = isLight ? "Dark mode" : "Light mode";
+    if (themeToggleMobile) themeToggleMobile.textContent = isLight ? "Dark mode" : "Light mode";
+}
 
-burgerMenu.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-});
+if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
+if (themeToggleMobile) themeToggleMobile.addEventListener("click", toggleTheme);
+
+// --- RESPONSIVE NAV DROPDOWN ---
+const dropdownBtn = document.getElementById("nav-dropdown-btn");
+const dropdownMenu = document.getElementById("nav-dropdown");
+
+if (dropdownBtn) {
+    dropdownBtn.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("active");
+    });
+}
+
+// Optional: close menu when link or button is clicked
+if (dropdownMenu) {
+    dropdownMenu.querySelectorAll("a, button").forEach(item => {
+        item.addEventListener("click", () => {
+            dropdownMenu.classList.remove("active");
+        });
+    });
+}
