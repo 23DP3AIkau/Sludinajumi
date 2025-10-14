@@ -46,3 +46,37 @@ if (dropdownMenu) {
         });
     });
 }
+
+
+// --- MODAL FUNCTIONALITY ---
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-desc");
+const modalPrice = document.getElementById("modal-price");
+const modalClose = document.querySelector(".modal-close");
+
+// Open modal when a "Skatīt" button is clicked
+document.querySelectorAll(".card button").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        const card = btn.closest(".card");
+        modalImg.src = card.querySelector("img").src;
+        modalTitle.textContent = card.querySelector("h3").textContent;
+        modalDesc.textContent = card.querySelector(".desc").textContent;
+        modalPrice.textContent = card.querySelector(".price").textContent;
+
+        modal.style.display = "flex";
+    });
+});
+
+// Close modal
+modalClose.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Close modal when clicking outside the content
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});

@@ -319,6 +319,65 @@ body.light-mode {
 }
 
 
+/* --- MODAL STYLES --- */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.modal-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+    margin: 0.5rem 0;
+    color: var(--accent);
+}
+
+.modal-content p {
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+
+
 /* --- RESPONSIVE --- */
 @media (max-width: 1200px) {
     .card-container {

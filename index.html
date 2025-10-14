@@ -21,10 +21,9 @@
             <button>Pieslēgties/Reģistrēties</button>
         </div>
 
-        <!-- Dropdown button (replaces burger) -->
         <button class="nav-dropdown-btn" id="nav-dropdown-btn">☰</button>
 
-        <!-- Dropdown menu (shown on mobile only) -->
+        <!-- Dropdown menu -->
         <div class="nav-dropdown" id="nav-dropdown">
             <a href="#main-content">Sākums</a>
             <a href="#main-content">Sludinājumi</a>
@@ -46,7 +45,8 @@
                     <img src="src/images/mclaaawen.webp" alt="Auto">
                 </div>
                 <h3>McLaren Senna GTR</h3>
-                <p>2019. gads, labā stāvoklī, ērts ikdienas braucieniem. Cena: 1,500,000 €</p>
+                <p class="desc">2019. gads, labā stāvoklī, ērts ikdienas braucieniem.</p>
+                <p class="price">Cena: 1,500,000 €</p>
                 <button>Skatīt</button>
             </div>
             <div class="card">
@@ -54,7 +54,8 @@
                     <img src="src/images/pc.webp" alt="Dators">
                 </div>
                 <h3>Dators</h3>
-                <p>Gaming PC ar RTX 3070, Ryzen 5. Cena: 950 €</p>
+                <p class="desc">Gaming PC ar RTX 3070, Ryzen 5.</p>
+                <p class="price">Cena: 950 €</p>
                 <button>Skatīt</button>
             </div>
             <div class="card">
@@ -62,7 +63,8 @@
                     <img src="src/images/dzivoklis.jpg" alt="Dzīvoklis">
                 </div>
                 <h3>2 istabu dzīvoklis</h3>
-                <p>Rīga, 45 m², mēbelēts. Cena: 400 €/mēn</p>
+                <p class="desc">Rīga, 45 m², mēbelēts.</p>
+                <p class="price">Cena: 400 €/mēn</p>
                 <button>Skatīt</button>
             </div>
             <div class="card">
@@ -70,7 +72,8 @@
                     <img src="src/images/mtbike.avif" alt="Velosipēds">
                 </div>
                 <h3>Kalnu velosipēds</h3>
-                <p>Labs stāvoklis, maz lietots. Cena: 180 €</p>
+                <p class="desc">Labs stāvoklis, maz lietots.</p>
+                <p class="price">Cena: 180 €</p>
                 <button>Skatīt</button>
             </div>
             <div class="card">
@@ -78,10 +81,24 @@
                     <img src="src/images/box.jpg" alt="Kebabs">
                 </div>
                 <h3>Kebabs</h3>
-                <p>Garšīgs, sulīgs kebabs ar svaigām dārzeņiem, ar lielopu un vistas gaļu. Cena: 5 €</p>
+                <p class="desc">Garšīgs, sulīgs kebabs ar svaigām dārzeņiem, ar lielopu un vistas gaļu.</p>
+                <p class="price">Cena: 5 €</p>
                 <button>Skatīt</button>
             </div>
         </section>
+
+        <!-- Modal Window -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Item">
+                </div>
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+                <p id="modal-price"></p>
+            </div>
+        </div>
     </main>
 
     <aside>
