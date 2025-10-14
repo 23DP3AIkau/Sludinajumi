@@ -10,6 +10,10 @@
     --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -133,6 +137,8 @@ nav a:hover {
 .nav-dropdown.active {
     display: flex;
 }
+
+
 
 /* --- MAIN --- */
 main {
@@ -311,6 +317,7 @@ body.light-mode {
     --link-color: #3f51b5;
     --shadow-color: rgba(0, 0, 0, 0.2);
 }
+
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1200px) {
