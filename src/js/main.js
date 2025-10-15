@@ -22,7 +22,7 @@ function toggleTheme() {
 
     // Update both buttons (desktop + mobile)
     if (themeToggle) themeToggle.textContent = isLight ? "Dark mode" : "Light mode";
-    if (themeToggleMobile) themeToggleMobile.textContent = isLight ? "Dark mode" : "Light mode";
+    if (themeToggleMobile) themeToggleMobile.textContent = isLight ? "Dark mode" : "Light mode"; 
 }
 
 if (themeToggle) themeToggle.addEventListener("click", toggleTheme);

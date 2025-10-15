@@ -25,12 +25,12 @@ body {
         "header header"
         "aside main"
         "footer footer";
-    grid-template-columns: 220px 1fr; /* aside width + main area */
+    grid-template-columns: 220px 1fr; 
     min-height: 100vh;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- HEADER --- */
+
 header {
     grid-area: header;
     background-color: var(--surface-color);
@@ -88,7 +88,7 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* --- NAV DROPDOWN BUTTON (replaces burger menu) --- */
+
 .nav-dropdown-btn {
     display: none;
     background: none;
@@ -99,7 +99,6 @@ nav a:hover {
     margin-right: 3rem;
 }
 
-/* --- DROPDOWN MENU --- */
 .nav-dropdown {
     display: none;
     position: absolute;
@@ -138,9 +137,10 @@ nav a:hover {
     display: flex;
 }
 
+#main-content {
+    align-items: center;
+}
 
-
-/* --- MAIN --- */
 main {
     grid-area: main;
     padding: 2rem;
@@ -152,7 +152,7 @@ main h2 {
     color: var(--accent);
 }
 
-/* --- CARDS --- */
+
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -164,7 +164,7 @@ main h2 {
     background-color: var(--surface-color);
     border-radius: 12px;
     padding: 1.5rem;
-    width: 340px;
+    width: 20rem;
     box-shadow: 0 4px 8px var(--shadow-color);
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     display: flex;
@@ -219,7 +219,6 @@ main h2 {
     transform: scale(1.05);
 }
 
-/* --- ASIDE --- */
 aside {
     grid-area: aside;
     background-color: var(--surface-color);
@@ -228,7 +227,6 @@ aside {
     transition: background-color 0.3s;
 }
 
-/* --- FOOTER --- */
 footer {
     grid-area: footer;
     background-color: var(--surface-color);
@@ -240,7 +238,6 @@ footer {
     transition: background-color 0.3s;
 }
 
-/* --- FLOATING CATEGORY BUTTON --- */
 .floating-dropdown {
     position: fixed;
     bottom: 20px;
@@ -268,7 +265,7 @@ footer {
 .floating-dropdown-content {
     display: none;
     position: absolute;
-    bottom: 51px; /* goes UP */
+    bottom: 51px; 
     right: 0;
     background-color: var(--surface-color);
     border-radius: 10px;
@@ -305,7 +302,6 @@ footer {
     background-color: var(--surface-alt);
 }
 
-/* --- LIGHT MODE --- */
 body.light-mode {
     --bg-color: #f5f5f5;
     --surface-color: #ffffff;
@@ -319,9 +315,8 @@ body.light-mode {
 }
 
 
-/* --- MODAL STYLES --- */
 .modal {
-    display: none; /* hidden by default */
+    display: flex; 
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -332,13 +327,13 @@ body.light-mode {
     background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 0;
 }
 
 .modal-content {
     background-color: var(--surface-color);
     border-radius: 12px;
-    max-width: 600px;
+    max-width: 40rem;
     width: 100%;
     padding: 1.5rem;
     position: relative;
@@ -386,6 +381,13 @@ body.light-mode {
 }
 
 @media (max-width: 900px) {
+    .modal-content {
+        max-width: 30rem;
+    }
+    .card {
+        width: 16rem;
+    }
+
     nav,
     .header-buttons {
         display: none;
@@ -413,23 +415,30 @@ body.light-mode {
 }
 
 @media (max-width: 600px) {
+    .modal-content {
+        max-width: 16rem;
+    }
+
+    .card {
+        width: 14rem;
+    }
     .card-container {
         grid-template-columns: 1fr;
     }
 }
 
-/* --- ANIMATIONS --- */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- HIDE SCROLLBAR (keep scrolling) --- */
+
 html, body {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none; 
 }
