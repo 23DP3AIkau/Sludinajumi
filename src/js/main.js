@@ -74,3 +74,63 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
+
+// Forms
+
+const contactForm = document.getElementById("contact-form");
+const formMsg = document.getElementById("form-msg");
+
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Email regex
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Reset classes
+    formMsg.classList.remove("error", "success");
+
+    if (!name || !email || !message) {
+        formMsg.textContent = "Lūdzu aizpildi visus laukus!";
+        formMsg.classList.add("error");
+        formMsg.style.opacity = 1;
+        return;
+    }
+
+    if (!emailPattern.test(email)) {
+        formMsg.textContent = "E-pasta formāts nav pareizs!";
+        formMsg.classList.add("error");
+        formMsg.style.opacity = 1;
+        return;
+    }
+
+    formMsg.textContent = "Forma veiksmīgi iesniegta!";
+    formMsg.classList.add("success");
+    formMsg.style.opacity = 1;
+
+    contactForm.reset();
+});
+
+
+// Search
+
+const search = document.getElementById("search");
+
+search.addEventListener("input", () => {
+    const value = search.value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const text = card.querySelector(".desc").textContent.toLowerCase();
+
+        if (title.includes(value) || text.includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});

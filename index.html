@@ -15,8 +15,9 @@
             <a href="#footer">Kontakti</a>
         </nav>
         <div class="header-buttons">
+            <input type="text" id="search" placeholder="Meklēt sludinājumus..." class="search-bar">
             <button id="theme-toggle">Light mode</button>
-            <button>Meklēt</button>
+            <!-- <button>Meklēt</button> -->
             <button>Pievienot sludinājumu</button>
             <button>Pieslēgties/Reģistrēties</button>
         </div>
@@ -97,11 +98,29 @@
                 <p id="modal-price"></p>
             </div>
         </div>
+
+        <form id="contact-form" class="contact-form">
+            <h2>Sazinies ar mums</h2>
+                
+            <label>Vārds:</label>
+            <input type="text" id="name" />
+                
+            <label>E-pasts:</label>
+            <input type="email" id="email" />
+                
+            <label>Ziņojums:</label>
+            <textarea id="message"></textarea>
+                
+            <button type="submit">Sūtīt</button>
+                
+            <p id="form-msg"></p>
+        </form>
     </main>
 
     <aside>
         
     </aside>
+
     
     <footer id="footer">
         <p>&copy; 2025 Alans Ikaunieks</p>
