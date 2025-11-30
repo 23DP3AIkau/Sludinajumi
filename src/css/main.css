@@ -428,9 +428,8 @@ body.light-mode {
     transform: scale(1.05);
 }
 
-/* Neļaut tekstu iezīmēt un parādīt pointer kursors */
 #site-title {
-    -webkit-user-select: none; /* Safari/Chrome */
+    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -438,14 +437,12 @@ body.light-mode {
     outline: none;
 }
 
-/* novērst text selection arī pēc dblclick (papildus) */
 #site-title::selection {
     background: transparent;
 }
 
-/* Dropdown meklēšanas lauka stils */
 .nav-dropdown .dropdown-search {
-    display: none; /* pēc noklusējuma slēpt; dropdown ir mobilajām ierīcēm */
+    display: none;
     padding: 8px;
 }
 .nav-dropdown .dropdown-search input {
@@ -457,12 +454,101 @@ body.light-mode {
     color: var(--text-primary);
 }
 
-/* Mobilajos skatījumos (pārliecināmies dropdown meklēšana tiek rādīta) */
-@media (max-width: 900px) {
-    .nav-dropdown .dropdown-search {
-        display: block;
-    }
+/* --- API --- */
+
+
+.dashboard-section {
+    margin-top: 60px;
+    padding: 20px;
 }
+
+.dashboard-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#news-query {
+    padding: 10px;
+    flex: 1;
+    border-radius: 8px;
+    background: var(--surface-alt);
+    color: var(--text-primary);
+    border: 1px solid var(--accent);
+}
+
+#news-search-btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#news-search-btn:hover {
+    background: var(--accent-hover);
+}
+
+.news-error {
+    color: #ff6b6b;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.news-cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.news-card {
+    background: var(--surface-color);
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.news-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.search-history {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.search-history button {
+    background: var(--surface-alt);
+    color: var(--text-secondary);
+    border: 1px solid var(--accent);
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+.search-history button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 
 /* --- RESPONSIVE --- */
@@ -503,6 +589,10 @@ body.light-mode {
 
     .card-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-dropdown .dropdown-search {
+        display: block;
     }
 }
 
