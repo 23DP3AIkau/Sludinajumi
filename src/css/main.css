@@ -428,6 +428,41 @@ body.light-mode {
     transform: scale(1.05);
 }
 
+/* Neļaut tekstu iezīmēt un parādīt pointer kursors */
+#site-title {
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* novērst text selection arī pēc dblclick (papildus) */
+#site-title::selection {
+    background: transparent;
+}
+
+/* Dropdown meklēšanas lauka stils */
+.nav-dropdown .dropdown-search {
+    display: none; /* pēc noklusējuma slēpt; dropdown ir mobilajām ierīcēm */
+    padding: 8px;
+}
+.nav-dropdown .dropdown-search input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--surface-alt);
+    background: var(--surface-alt);
+    color: var(--text-primary);
+}
+
+/* Mobilajos skatījumos (pārliecināmies dropdown meklēšana tiek rādīta) */
+@media (max-width: 900px) {
+    .nav-dropdown .dropdown-search {
+        display: block;
+    }
+}
 
 
 /* --- RESPONSIVE --- */
