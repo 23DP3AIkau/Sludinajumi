@@ -104,24 +104,25 @@
             </div>
         </div>
 
-        <section id="news-dashboard" class="dashboard-section">
-            <h2>📰 News Dashboard</h2>
-                
+        <section id="name-guess-section" class="dashboard-section">
+            <h2>Guess from Name</h2>
+
             <div class="dashboard-controls">
-                <input
-                    type="text"
-                    id="news-query"
-                    placeholder="Ievadi meklējamo frāzi (piem.: technology)"
-                >
-                <button id="news-search-btn">Meklēt ziņas</button>
+                <input type="text" id="name-input" placeholder="Ievadi vārdu (piem.: Jānis)" />
+                <button id="guess-btn">Uzminēt</button>
             </div>
-        
-            <div id="search-history" class="search-history"></div>
-        
-            <p id="news-error" class="news-error"></p>
-        
-            <div id="news-results" class="news-cards"></div>
+      
+            <div id="guess-results"></div>
         </section>
+
+        <section id="ip-info-section" class="dashboard-section">
+            <h2>Your IP & Geolocation</h2>
+
+            <button id="get-ip-btn">Rādīt IP informāciju</button>
+            
+            <div id="ip-results"></div>
+        </section>
+
 
 
         <form id="contact-form" class="contact-form">

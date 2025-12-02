@@ -39,7 +39,6 @@ if (dropdownBtn) {
     dropdownBtn.addEventListener("click", () => {
         dropdownMenu.classList.toggle("active");
 
-        // Kad atveras dropdown — fokusē meklēšanas lauku (mobilajā)
         if (dropdownMenu.classList.contains("active") && searchMobile) {
             setTimeout(() => searchMobile.focus(), 120);
         }
@@ -173,3 +172,87 @@ if (siteTitle) {
     siteTitle.addEventListener("mousedown", e => e.preventDefault());
 }
 
+/* --------------------- API's ------------------------------ */
+
+
+// Name API section
+const guessBtn = document.getElementById("guess-btn");
+const nameInput = document.getElementById("name-input");
+const resultsDiv = document.getElementById("guess-results");
+
+if (guessBtn) {
+  guessBtn.addEventListener("click", async () => {
+    const name = nameInput.value.trim();
+    resultsDiv.innerHTML = "";  
+
+    if (!name) {
+      resultsDiv.textContent = "Lūdzu ievadi vārdu.";
+      return;
+    }
+
+    try {
+      // Gender
+      const genderResp = await fetch(`https://api.genderize.io?name=${encodeURIComponent(name)}`);
+      const genderData = await genderResp.json();
+
+
+      // Nationality
+      const natResp = await fetch(`https://api.nationalize.io?name=${encodeURIComponent(name)}`);
+      const natData = await natResp.json();
+
+      // Build
+      const gender = genderData.gender || "nezināms";
+      const genderProb = genderData.probability != null ? `${(genderData.probability * 100).toFixed(1)}%` : "";
+      const countries = (natData.country || []).sort((a, b) => b.probability - a.probability).slice(0, 3);  // top 3
+      const countryList = countries.length
+        ? countries.map(c => `${c.country_id} (${(c.probability * 100).toFixed(1)}%)`).join(", ")
+        : "–";
+
+      resultsDiv.innerHTML = `
+        <p><strong>Vārds:</strong> ${name}</p>
+        <p><strong>Ģenerējais dzimums:</strong> ${gender} ${genderProb}</p>
+        <p><strong>Iespējamā tautība (top 3):</strong> ${countryList}</p>
+      `;
+    } catch (err) {
+      console.error(err);
+      resultsDiv.textContent = "Kļūda — mēģini vēlreiz vai pārbaudi internetu.";
+    }
+  });
+}
+
+
+
+// IP + geolocation section
+const getIpBtn = document.getElementById("get-ip-btn");
+const ipResultsDiv = document.getElementById("ip-results");
+
+if (getIpBtn) {
+  getIpBtn.addEventListener("click", async () => {
+    ipResultsDiv.innerHTML = "";  
+
+    try {
+      const ipRes = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipRes.json();
+      const ip = ipData.ip;
+
+      const infoRes = await fetch(`https://ipinfo.io/${ip}/json?token=31e9a670326015`);
+      const infoData = await infoRes.json();
+
+      const city = infoData.city || "—";
+      const region = infoData.region || "—";
+      const country = infoData.country || "—";
+      const loc = infoData.loc || "—";
+
+      ipResultsDiv.innerHTML = `
+        <p><strong>IP:</strong> ${ip}</p>
+        <p><strong>Pilsēta:</strong> ${city}</p>
+        <p><strong>Reģions:</strong> ${region}</p>
+        <p><strong>Valsts:</strong> ${country}</p>
+        <p><strong>Koordinātas:</strong> ${loc}</p>
+      `;
+    } catch (err) {
+      console.error(err);
+      ipResultsDiv.textContent = "Kļūda — nevarēja iegūt IP / atrašanās vietu.";
+    }
+  });
+}

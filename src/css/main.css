@@ -456,98 +456,108 @@ body.light-mode {
 
 /* --- API --- */
 
-
-.dashboard-section {
-    margin-top: 60px;
-    padding: 20px;
+/* Name section */
+#name-guess-section {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: var(--surface-alt);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
-.dashboard-controls {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+#name-guess-section .dashboard-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
 }
 
-#news-query {
-    padding: 10px;
-    flex: 1;
-    border-radius: 8px;
-    background: var(--surface-alt);
-    color: var(--text-primary);
-    border: 1px solid var(--accent);
+#name-guess-section input#name-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--surface-color);
+  color: var(--text-primary);
 }
 
-#news-search-btn {
-    padding: 10px 16px;
-    border-radius: 10px;
-    background: var(--accent);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-#news-search-btn:hover {
-    background: var(--accent-hover);
-}
-
-.news-error {
-    color: #ff6b6b;
-    font-size: 18px;
-    margin: 10px 0;
+#name-guess-section button#guess-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.news-cards {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+#name-guess-section button#guess-btn:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.05);
 }
 
-.news-card {
-    background: var(--surface-color);
-    padding: 16px;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px var(--shadow-color);
-    transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
+#guess-results {
+  background: var(--surface-color);
+  padding: 15px;
+  border-radius: 8px;
+  color: var(--text-primary);
 }
 
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px var(--shadow-color);
+#guess-results p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
 }
 
-.news-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 10px;
+#guess-results p strong {
+  color: var(--accent);
 }
 
-.search-history {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    opacity: 0.8;
+
+/* IP section */
+#ip-info-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--surface-alt);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
 }
 
-.search-history button {
-    background: var(--surface-alt);
-    color: var(--text-secondary);
-    border: 1px solid var(--accent);
-    padding: 5px 10px;
-    border-radius: 8px;
-    margin-right: 6px;
-    cursor: pointer;
-}
-.search-history button:hover {
-    background: var(--accent);
-    color: white;
+#ip-info-section button#get-ip-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-bottom: 1rem;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+#ip-info-section button#get-ip-btn:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.05);
 }
+
+#ip-results {
+  background: var(--surface-color);
+  padding: 15px;
+  border-radius: 8px;
+  color: var(--text-primary);
+}
+
+#ip-results p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+#ip-results p strong {
+  color: var(--accent);
+}
+
+
 
 
 
