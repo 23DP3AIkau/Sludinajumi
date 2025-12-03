@@ -30,7 +30,6 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-
 header {
     grid-area: header;
     background-color: var(--surface-color);
@@ -64,6 +63,7 @@ nav a {
     font-weight: 500;
     transition: color 0.3s;
 }
+
 nav a:hover {
     color: var(--accent-hover);
 }
@@ -83,11 +83,11 @@ nav a:hover {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
+
 .header-buttons button:hover {
     background-color: var(--accent-hover);
     transform: scale(1.05);
 }
-
 
 .nav-dropdown-btn {
     display: none;
@@ -147,11 +147,11 @@ main {
     background-color: var(--surface-alt);
     transition: background-color 0.3s;
 }
+
 main h2 {
     margin-top: 0;
     color: var(--accent);
 }
-
 
 .card-container {
     display: grid;
@@ -160,6 +160,7 @@ main h2 {
     margin-top: 2rem;
     justify-items: center;
 }
+
 .card {
     background-color: var(--surface-color);
     border-radius: 12px;
@@ -175,6 +176,7 @@ main h2 {
     transform: translateY(-8px);
     box-shadow: 0 8px 16px var(--shadow-color);
 }
+
 .card-image {
     width: 100%;
     height: 225px;
@@ -186,23 +188,28 @@ main h2 {
     justify-content: center;
     background: var(--surface-alt);
 }
+
 .card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
+
 .card:hover .card-image img {
     transform: scale(1.1);
 }
+
 .card h3 {
     color: var(--accent);
     margin: 0.5rem 0;
 }
+
 .card p {
     color: var(--text-secondary);
     font-size: 0.95rem;
 }
+
 .card button {
     margin-top: auto;
     padding: 0.6rem 1.2rem;
@@ -214,6 +221,7 @@ main h2 {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
+
 .card button:hover {
     background-color: var(--accent-hover);
     transform: scale(1.05);
@@ -257,6 +265,7 @@ footer {
     box-shadow: 0 4px 8px var(--shadow-color);
     transition: background-color 0.3s, transform 0.2s;
 }
+
 .floating-btn:hover {
     background-color: var(--accent-hover);
     transform: scale(1.05);
@@ -272,6 +281,7 @@ footer {
     box-shadow: 0 4px 10px var(--shadow-color);
     animation: dropdownUp 0.3s ease;
 }
+
 .floating-dropdown:hover .floating-dropdown-content {
     display: block;
 }
@@ -298,6 +308,7 @@ footer {
     text-decoration: none;
     transition: background-color 0.3s;
 }
+
 .floating-dropdown-content a:hover {
     background-color: var(--surface-alt);
 }
@@ -313,7 +324,6 @@ body.light-mode {
     --link-color: #3f51b5;
     --shadow-color: rgba(0, 0, 0, 0.2);
 }
-
 
 .modal {
     display: none; 
@@ -380,7 +390,6 @@ body.light-mode {
     color: var(--text-primary);
 }
 
-
 .contact-form {
     width: 50%;
     margin: 40px auto;
@@ -445,6 +454,7 @@ body.light-mode {
     display: none;
     padding: 8px;
 }
+
 .nav-dropdown .dropdown-search input {
     width: 100%;
     padding: 8px 10px;
@@ -458,107 +468,117 @@ body.light-mode {
 
 /* Name section */
 #name-guess-section {
-  margin-top: 60px;
-  padding: 20px;
-  background-color: var(--surface-alt);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--shadow-color);
+margin-top: 60px;
+padding: 20px;
+background-color: var(--surface-alt);
+border-radius: 12px;
+box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 #name-guess-section .dashboard-controls {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 1.5rem;
+display: flex;
+gap: 10px;
+margin-bottom: 1.5rem;
 }
 
 #name-guess-section input#name-input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  background: var(--surface-color);
-  color: var(--text-primary);
+flex: 1;
+padding: 10px;
+border: 1px solid var(--accent);
+border-radius: 8px;
+background: var(--surface-color);
+color: var(--text-primary);
 }
 
 #name-guess-section button#guess-btn {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--accent);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+padding: 10px 16px;
+border: none;
+border-radius: 8px;
+background-color: var(--accent);
+color: white;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.2s;
 }
 
 #name-guess-section button#guess-btn:hover {
-  background-color: var(--accent-hover);
-  transform: scale(1.05);
+background-color: var(--accent-hover);
+transform: scale(1.05);
 }
 
 #guess-results {
-  background: var(--surface-color);
-  padding: 15px;
-  border-radius: 8px;
-  color: var(--text-primary);
+background: var(--surface-color);
+padding: 15px;
+border-radius: 8px;
+color: var(--text-primary);
 }
 
 #guess-results p {
-  margin: 6px 0;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+margin: 6px 0;
+font-size: 0.95rem;
+color: var(--text-secondary);
 }
 
 #guess-results p strong {
-  color: var(--accent);
+color: var(--accent);
 }
 
-
 /* IP section */
+
 #ip-info-section {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: var(--surface-alt);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--shadow-color);
+margin-top: 40px;
+padding: 20px;
+background-color: var(--surface-alt);
+border-radius: 12px;
+box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 #ip-info-section button#get-ip-btn {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--accent);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  margin-bottom: 1rem;
+padding: 10px 16px;
+border: none;
+border-radius: 8px;
+background-color: var(--accent);
+color: white;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s, transform 0.2s;
+margin-bottom: 1rem;
 }
 
 #ip-info-section button#get-ip-btn:hover {
-  background-color: var(--accent-hover);
-  transform: scale(1.05);
+background-color: var(--accent-hover);
+transform: scale(1.05);
 }
 
 #ip-results {
-  background: var(--surface-color);
-  padding: 15px;
-  border-radius: 8px;
-  color: var(--text-primary);
+background: var(--surface-color);
+padding: 15px;
+border-radius: 8px;
+color: var(--text-primary);
 }
 
 #ip-results p {
-  margin: 6px 0;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+margin: 6px 0;
+font-size: 0.95rem;
+color: var(--text-secondary);
 }
 
 #ip-results p strong {
-  color: var(--accent);
+color: var(--accent);
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.4s ease forwards;
+}
 
-
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 /* --- RESPONSIVE --- */
@@ -575,20 +595,16 @@ body.light-mode {
     .card {
         width: 16rem;
     }
-
     nav,
     .header-buttons {
         display: none;
     }
-
     .nav-dropdown-btn {
         display: block;
     }
-
     aside {
         display: none;
     }
-
     body {
         grid-template-areas:
             "header"
@@ -596,11 +612,9 @@ body.light-mode {
             "footer";
         grid-template-columns: 1fr;
     }
-
     .card-container {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .nav-dropdown .dropdown-search {
         display: block;
     }
@@ -610,7 +624,6 @@ body.light-mode {
     .modal-content {
         max-width: 16rem;
     }
-
     .card {
         width: 14rem;
     }
@@ -619,17 +632,16 @@ body.light-mode {
     }
 }
 
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-
 html, body {
     scrollbar-width: none; 
     -ms-overflow-style: none; 
 }
+
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none; 
